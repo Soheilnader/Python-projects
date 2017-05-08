@@ -15,16 +15,16 @@ if y3==y2==y1 :
         while y1 >= x1+a:
             a += 1
             if y1==x1+a:
-               print(y1,"n-",a)
+               print(y1,"n-",a,sep='')
                break
     if y1<x1+a :
         while y1 <= x1+a:
             a -= 1
             if y1==x1+a:
-               print(y1,"n+",abs(a))
+               print(y1,"n+",abs(a),sep='')
                break
     if y1==x1:
-        print (y1,'n')
+        print (y1,'n',sep='')
 else:
     print("error!")
 
