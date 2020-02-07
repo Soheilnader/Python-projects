@@ -64,7 +64,6 @@ frames = ["""
 =========
 """]
 wronglist = []
-counter = 0
 rnd = random.randrange(0,len(word))
 def winscreen():
     print("""
@@ -89,7 +88,6 @@ for i in range(0, len(word[rnd])):
     word2.append("-")
 print(word2)
 while wrong<=5:
-    counter = 0
     print(frames[wrong])
     print("wrong letters you entered: ", wronglist)
 
