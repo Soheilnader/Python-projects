@@ -3,7 +3,7 @@
 import random
 import os
 
-word = ["hello"]
+word = ["hello","apple","country","football","avenger","development"]
 word2 = []
 wrong = 0
 frames = ["""
@@ -65,8 +65,27 @@ frames = ["""
 """]
 wronglist = []
 counter = 0
+rnd = random.randrange(0,len(word))
+def winscreen():
+    print("""
+    |@@@@|     |####|
+    |@@@@|     |####|
+    |@@@@|     |####|
+    \@@@@|     |####/
+     \@@@|     |###/
+      `@@|_____|##'
+           (O)
+        .-'''''-.
+      .'  * * *  `.
+     :  *       *  :
+    :  W I N N E R  :
+    : ~           ~ :
+     :  *       *  :
+      `.  * * *  .'
+        `-.....-'""")
 
-for i in range(0, len(word[0])):
+
+for i in range(0, len(word[rnd])):
     word2.append("-")
 print(word2)
 while wrong<=5:
@@ -74,25 +93,26 @@ while wrong<=5:
     print(frames[wrong])
     print("wrong letters you entered: ", wronglist)
 
-    guess = input("one word: ")
+    guess = input("one letter: ")
     os.system('cls')
-    if(word[0].count(guess)==0):
+    if(word[rnd].count(guess)==0):
         wrong = wrong + 1
         wronglist.append(guess)
     else:
-        for i in word[0]:
-            if i == guess:
-                word2[word[0].index(i)+counter]=guess
-                counter=counter+1
+        for i in range(len(word[rnd])):
+            if word[rnd][i] == guess:
+                word2[i]=guess
+
     print(word2)
-    if(word2 == list(word[0])):
-        print("Done!")
+    if(word2 == list(word[rnd])):
+        print("You Won!")
+        winscreen()
         break
 if(wrong==6):
     os.system('cls')
-    print("You loose")
+    print("Looser :)")
     print(frames[6])
-    print("Answer was: ", list(word[0]))
+    print("Answer was: ", list(word[rnd]))
 input()
 
 
